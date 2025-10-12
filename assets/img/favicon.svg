@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">JEEAchievers favicon</title>
+  <desc id="desc">Rounded square gradient favicon with stylized letter J</desc>
+  <defs>
+    <linearGradient id="faviconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3C63FC" />
+      <stop offset="100%" stop-color="#8D55FC" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#0F1426" flood-opacity="0.35" />
+    </filter>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="#0F1426" />
+  <g filter="url(#shadow)">
+    <rect x="10" y="10" width="44" height="44" rx="12" fill="url(#faviconGradient)" />
+  </g>
+  <path d="M26 18h12c5.6 0 10 4.4 10 10 0 5.5-4.3 10-9.8 10H32v8h-6V18zm6 14h6c2.1 0 3.8-1.7 3.8-4s-1.7-4-3.8-4H32v8z" fill="#F5F7FF" />
+</svg>

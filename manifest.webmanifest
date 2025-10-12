@@ -1,0 +1,23 @@
+{
+  "name": "JEEAchievers IIT-JEE Coaching",
+  "short_name": "JEEAchievers",
+  "description": "Premier IIT-JEE coaching institute with hybrid classrooms, adaptive analytics, and elite mentors.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F1426",
+  "theme_color": "#0F1426",
+  "icons": [
+    {
+      "src": "assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
