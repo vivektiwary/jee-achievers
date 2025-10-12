@@ -33,3 +33,11 @@ Marketing site for the fictional **JEEAchievers** IIT-JEE coaching network. The 
 - Update the canonical domain inside `index.html`, `sitemap.xml`, and `robots.txt` before going live.
 - Supply production review API endpoints (with the required CORS headers) to surface third-party ratings on the site.
 - Replace the placeholder brochure link with a real PDF and extend the manifest icons if publishing to app stores.
+
+## Continuous deployment
+
+This repository ships with a GitHub Actions workflow that publishes the static bundle to **GitHub Pages** every time `main` is updated or when the workflow is triggered manually:
+
+1. Enable GitHub Pages in the repository settings and select **GitHub Actions** as the source.
+2. Merge changes into `main` (or re-run the workflow) to build the site and deploy the artifact.
+3. Monitor the workflow run for the published page URL and any status updates.
