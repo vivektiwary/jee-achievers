@@ -14,9 +14,9 @@
   --radius-lg: 28px;
   --radius-md: 20px;
   --radius-sm: 12px;
-  --gradient-hero: radial-gradient(circle at top left, rgba(108, 92, 231, 0.24), transparent 55%),
-    radial-gradient(circle at bottom right, rgba(0, 184, 148, 0.28), transparent 60%),
-    #101732;
+  --gradient-hero: radial-gradient(circle at top left, rgba(108, 92, 231, 0.28), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(0, 184, 148, 0.35), transparent 60%),
+    #0f1426;
   --transition-base: all 0.3s ease;
   font-size: 16px;
 }
@@ -210,22 +210,21 @@ h3 {
 
 .hero {
   background: var(--gradient-hero);
-  color: #f8fbff;
+  color: #fff;
   padding: clamp(6rem, 12vw, 9rem) 0 clamp(4rem, 8vw, 6rem);
-  text-shadow: 0 10px 24px rgba(10, 14, 32, 0.6);
 }
 
 .hero-copy .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 0.85rem;
   margin-bottom: 1rem;
 }
 
 .hero .lead {
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.82);
   max-width: 520px;
 }
 
@@ -246,36 +245,34 @@ h3 {
 .hero-stats dt {
   font-size: 2.4rem;
   font-weight: 700;
-  color: #ffffff;
 }
 
 .hero-stats dd {
   margin: 0;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 0.95rem;
 }
 
 .hero-card {
-  background: rgba(21, 28, 54, 0.65);
-  border: 1px solid rgba(160, 172, 255, 0.24);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   padding: 2.5rem;
   border-radius: var(--radius-lg);
-  backdrop-filter: blur(18px);
-  box-shadow: 0 22px 60px rgba(12, 16, 36, 0.6);
-  color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 60px rgba(15, 20, 38, 0.45);
 }
 
 .hero-card ul {
   padding-left: 1.2rem;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .hero-card .badge {
   display: inline-flex;
   padding: 0.5rem 1.1rem;
   border-radius: 999px;
-  background: rgba(0, 184, 148, 0.42);
-  color: #f2fffb;
+  background: rgba(0, 184, 148, 0.3);
+  color: #fff;
   margin-top: 1.5rem;
   font-weight: 600;
 }
