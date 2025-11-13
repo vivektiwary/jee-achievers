@@ -14,9 +14,9 @@
   --radius-lg: 28px;
   --radius-md: 20px;
   --radius-sm: 12px;
-  --gradient-hero: radial-gradient(circle at top left, rgba(108, 92, 231, 0.28), transparent 55%),
-    radial-gradient(circle at bottom right, rgba(0, 184, 148, 0.35), transparent 60%),
-    #0f1426;
+  --gradient-hero: radial-gradient(circle at top left, rgba(108, 92, 231, 0.4), transparent 58%),
+    radial-gradient(circle at bottom right, rgba(0, 184, 148, 0.36), transparent 62%),
+    #1a2450;
   --transition-base: all 0.3s ease;
   font-size: 16px;
 }
@@ -210,21 +210,29 @@ h3 {
 
 .hero {
   background: var(--gradient-hero);
-  color: #fff;
+  color: #ffffff;
   padding: clamp(6rem, 12vw, 9rem) 0 clamp(4rem, 8vw, 6rem);
+  text-shadow: 0 8px 24px rgba(9, 13, 30, 0.55);
+}
+
+.hero h1,
+.hero h2,
+.hero h3,
+.hero p {
+  color: inherit;
 }
 
 .hero-copy .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.72);
   font-size: 0.85rem;
   margin-bottom: 1rem;
 }
 
 .hero .lead {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.96);
   max-width: 520px;
 }
 
@@ -245,34 +253,36 @@ h3 {
 .hero-stats dt {
   font-size: 2.4rem;
   font-weight: 700;
+  color: #ffffff;
 }
 
 .hero-stats dd {
   margin: 0;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.97rem;
 }
 
 .hero-card {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(20, 28, 62, 0.72);
+  border: 1px solid rgba(188, 202, 255, 0.35);
   padding: 2.5rem;
   border-radius: var(--radius-lg);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 20px 60px rgba(15, 20, 38, 0.45);
+  backdrop-filter: blur(22px);
+  box-shadow: 0 26px 70px rgba(12, 16, 36, 0.55);
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .hero-card ul {
   padding-left: 1.2rem;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .hero-card .badge {
   display: inline-flex;
   padding: 0.5rem 1.1rem;
   border-radius: 999px;
-  background: rgba(0, 184, 148, 0.3);
-  color: #fff;
+  background: rgba(0, 184, 148, 0.42);
+  color: #f2fffb;
   margin-top: 1.5rem;
   font-weight: 600;
 }
