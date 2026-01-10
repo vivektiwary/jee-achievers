@@ -1,27 +1,251 @@
 const testimonials = [
   {
-    name: "Ananya Iyer",
-    program: "Two-Year Integrated",
+    name: "Saroja Nair",
+    program: "Entrance Coaching",
     message:
-      "The MyJEE analytics dashboard kept my revision laser-focused. My mentor Shruti ma'am ensured I never felt overwhelmed even during peak mocks.",
-    year: "2024",
-    score: "AIR 186"
+      "He is a fantastic teacher who genuinely wants students to excel. His way of teaching is very friendly and the concepts can be easily grasped by children. I would give a 10 on 10 to his approach.",
+    year: "2025",
+    score: "10/10 Rating"
   },
   {
-    name: "Raghav Sharma",
-    program: "Dropper & Target 2024",
+    name: "Sourabh Dahiya",
+    program: "Engineering Entrance Coaching",
     message:
-      "Rank Reboot sprints were a game changer. Daily scorecards + night doubt rooms gave me the push to jump from 91 to 99.5 percentile.",
+      "Gunjan Kumar has been an exceptional teacher... Combined with his patient and motivating teaching style, it made a significant difference. My son successfully cleared NIMCET exam and got placed in NIT Patna.",
     year: "2024",
-    score: "JEE Main 99.52%"
+    score: "Placed in NIT Patna"
   },
   {
-    name: "Sara Khan",
-    program: "Foundation Batch",
+    name: "Vishakha Sharma",
+    program: "JEE Mains/Advanced",
     message:
-      "I loved the STEM labs and Olympiad boosters. The early foundation I built with JEEAchievers makes my class 11 prep super comfortable.",
+      "My subject knowledge in Maths has improved from basic upto advanced level. There is no scarcity of content and practice modules. His guidance is worth every penny and time.",
+    year: "2024",
+    score: "Advanced Level Support"
+  },
+  {
+    name: "Jonathan",
+    program: "Maths Tuition",
+    message:
+      "Initially I was unable to solve mains level module or PYQs but now I'm able to solve advanced level as well. He does quality mains/advanced PYQs in class and helps you solve questions if you're stuck.",
+    year: "2024",
+    score: "Zero to Advanced"
+  },
+  {
+    name: "Rashmi Bhardwaj",
+    program: "Parent Review",
+    message:
+      "My son is taking classes from Gunjan Sir. His teaching methodology is really good. He makes the concepts easily understandable by giving relatable examples.",
+    year: "2024",
+    score: "Verified Parent"
+  },
+  {
+    name: "Anjali",
+    program: "Engineering Entrance",
+    message:
+      "You have a remarkable ability to make complex topics understandable. Your clear explanations have made a significant impact on my learning. Thank you so much sir for helping me through the process.",
+    year: "2024",
+    score: "Student"
+  },
+  {
+    name: "Kumari Mona Bharti",
+    program: "Class 12 Tuition",
+    message:
+      "He is a good teacher, teaches very well and understands. Have been teaching for 2 years. My child is progressing in studies.",
+    year: "2024",
+    score: "Parent Review"
+  },
+  {
+    name: "Nithin",
+    program: "Engineering Entrance",
+    message:
+      "Very nice coaching satisfied with the teaching and the method used I was able to increase my marks after attending this coaching.",
     year: "2023",
-    score: "NTSE Scholar"
+    score: "Marks Improved"
+  },
+  {
+    name: "Aditya",
+    program: "Engineering Entrance",
+    message:
+      "Sir is a great teacher, he teaches the concept slowly and gives many problems to practice so that I understand the concept better. He also clarifies my doubts quite well.",
+    year: "2023",
+    score: "Concept Clarity"
+  },
+  {
+    name: "Bhuvan Prakash",
+    program: "JEE & SAT Prep",
+    message:
+      "Gunjan sir is very friendly and very informative, I can very easily interact with him about my problems. Definitely recommended for people who are preparing for any ISC or competitive exams such as JEE and SAT.",
+    year: "2023",
+    score: "Recommended"
+  },
+  {
+    name: "Sampreeth",
+    program: "Engineering Entrance",
+    message:
+      "Gunjan sir teaches very well and makes sure that the concept is understood. Gives multiple questions to solve and clarifies all the doubts and gives constructive feedback.",
+    year: "2023",
+    score: "Student"
+  },
+  {
+    name: "Rashmi",
+    program: "Engineering Entrance",
+    message:
+      "The basic concepts are taught well. Also you get clarification on certain concepts. The classes are also interesting. Thank you so much for your support. Highly recommended to all.",
+    year: "2022",
+    score: "Highly Recommended"
+  },
+  {
+    name: "Niranjan",
+    program: "Engineering Entrance",
+    message:
+      "Gunjan Sir is a great teacher. He explains concepts well with examples and gives many questions to solve. His notes have also been very useful.",
+    year: "2022",
+    score: "Student"
+  },
+  {
+    name: "M. Thirshith srivanth",
+    program: "Engineering Entrance",
+    message:
+      "I am able to understand and I'm getting my concepts cleared. Will work hard and try to finish my work faster. Thank you.",
+    year: "2022",
+    score: "Concept Clarity"
+  },
+  {
+    name: "Meenakshi Sarath",
+    program: "Engineering Entrance",
+    message:
+      "Gunjan Sir's teaching really helps me understand my concepts better. He is neither too slow nor too fast... I can see how much I have improved since I initially began these classes.",
+    year: "2022",
+    score: "Student"
+  },
+  {
+    name: "Gautham",
+    program: "Class 12 Tuition",
+    message:
+      "Sir knows his concepts really well. He gives good notes covering the whole syllabus. He gives practice questions to solve at the end of the class sometimes.",
+    year: "2022",
+    score: "Good Notes"
+  },
+  {
+    name: "A Chanda",
+    program: "Engineering Entrance",
+    message:
+      "I have started Maths tuition with Gunjan sir for past 1 month. He is teaching methodically and explaining basic concepts which is helpful for my understanding.",
+    year: "2022",
+    score: "Methodical Teaching"
+  },
+  {
+    name: "Vansh Verma",
+    program: "Engineering Entrance",
+    message:
+      "Gunjan Sir teaches amazing, he makes the concepts easier and clear, he focuses on problem solving as well. One of the best math teachers I've ever had.",
+    year: "2021",
+    score: "Best Teacher"
+  },
+  {
+    name: "Siddhanth",
+    program: "Engineering Entrance",
+    message:
+      "Amazing teacher. sir knows his subject very well/teaches with lot of passion... Explains concepts extremely well and does very good question practice. Would highly recommend!",
+    year: "2021",
+    score: "Highly Recommend"
+  },
+  {
+    name: "Khushboo Sharma",
+    program: "Engineering Entrance",
+    message:
+      "Many many thanks to Gunjan Sir... The way you explain concepts makes it very easy to understand and implement... I strongly recommend him.",
+    year: "2021",
+    score: "Strongly Recommend"
+  },
+  {
+    name: "Atharva Gandhi",
+    program: "Engineering Entrance",
+    message:
+      "He is an excellent teacher... Gunjan sir though teaches for JEE -IIT. He explain topic in a good way and give lots of practice questions to do in class.",
+    year: "2021",
+    score: "JEE Specialist"
+  },
+  {
+    name: "K Sreekar",
+    program: "Engineering Entrance",
+    message:
+      "He explains very well... He makes you do numerous questions until you master the topic. He is very affable and clarifies all the doubts. I totally recommend him.",
+    year: "2021",
+    score: "Subject Mastery"
+  },
+  {
+    name: "Mahendra Gupta",
+    program: "Engineering Entrance",
+    message:
+      "1) Very good teaching who works on concepts. 2) Provides lot of practice questions and reference material. ...Has good grip in the concept.",
+    year: "2021",
+    score: "Concept Grip"
+  },
+  {
+    name: "Grishma",
+    program: "Engineering Entrance",
+    message:
+      "He is a really good amazing teacher, filled with content... I could score 45 marks in mains exam with just 2 months of coaching from him, Allen dint benefit me much, if you need for JEE he is the right person.",
+    year: "2020",
+    score: "Marks Boost"
+  },
+  {
+    name: "Geetesh Saravanan",
+    program: "Engineering Entrance",
+    message:
+      "Amazing teacher, really talented... he will teach you from scratch till everything... in 3 months with his teaching I could score 40 marks in my jee Jan attempt.",
+    year: "2020",
+    score: "JEE Jan Attempt"
+  },
+  {
+    name: "Suman Kumari",
+    program: "Engineering Entrance",
+    message:
+      "He is really very nice. He has lots of experience and knowledge. He is very good teacher from entrance point of view.",
+    year: "2020",
+    score: "Parent Review"
+  },
+  {
+    name: "Dr Sangeeta Padhi",
+    program: "Engineering Entrance",
+    message:
+      "He is a very good, caring, knowledgeable and motivational teacher with deep Maths subject knowledge... Highly recommended as totally worth your time and money.",
+    year: "2020",
+    score: "Highly Recommended"
+  },
+  {
+    name: "Liza Gogoi",
+    program: "Class 12 Tuition",
+    message:
+      "He is a good teacher that can explain concepts well. He has good knowledge and grasp of mathematics.",
+    year: "2020",
+    score: "Student"
+  },
+  {
+    name: "Ishan Basu",
+    program: "Engineering Entrance",
+    message:
+      "Gunjan sir teaches all the concepts in a very detailed and logical manner. He is very patient while teaching and answers each and every small doubt.",
+    year: "2020",
+    score: "Student"
+  },
+  {
+    name: "Rajeev Radhakrishnan",
+    program: "Engineering Entrance",
+    message:
+      "Gunjan sir is a great teacher. He explains concepts well and answer any doubts that I have. He gives various examples for better understanding which really helps.",
+    year: "2020",
+    score: "Student"
+  },
+  {
+    name: "Shreya",
+    program: "Engineering Entrance",
+    message:
+      "Great questions and helps in conceptually building every chapter. Available for clearing doubts over phone most of the times.",
+    year: "2020",
+    score: "Student"
   }
 ];
 
