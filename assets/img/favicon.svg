@@ -1,18 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
   <title id="title">JEEPinnacle favicon</title>
-  <desc id="desc">Rounded square gradient favicon with stylized letter J</desc>
+  <desc id="desc">Geometric mountain peak mark for JEEPinnacle</desc>
   <defs>
-    <linearGradient id="faviconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#3C63FC" />
-      <stop offset="100%" stop-color="#8D55FC" />
+    <linearGradient id="faviconGradient" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#60A5FA" />
+      <stop offset="0.55" stop-color="#2563EB" />
+      <stop offset="1" stop-color="#7C3AED" />
     </linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#0F1426" flood-opacity="0.35" />
-    </filter>
   </defs>
-  <rect x="4" y="4" width="56" height="56" rx="14" fill="#0F1426" />
-  <g filter="url(#shadow)">
-    <rect x="10" y="10" width="44" height="44" rx="12" fill="url(#faviconGradient)" />
-  </g>
-  <path d="M26 18h12c5.6 0 10 4.4 10 10 0 5.5-4.3 10-9.8 10H32v8h-6V18zm6 14h6c2.1 0 3.8-1.7 3.8-4s-1.7-4-3.8-4H32v8z" fill="#F5F7FF" />
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="#07111F" />
+  <rect x="10" y="10" width="44" height="44" rx="14" fill="url(#faviconGradient)" />
+  <path d="M17 43L31 20.5L39 33.2L44 26.5L51 43H17Z" fill="#F8FAFC" />
+  <path d="M25.5 43C29.1 36.6 33.5 32.3 39 33.2" fill="none" stroke="#07111F" stroke-width="3.8" stroke-linecap="round" />
+  <circle cx="31.2" cy="21" r="2.4" fill="#DBEAFE" />
 </svg>

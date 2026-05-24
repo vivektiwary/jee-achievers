@@ -1,15 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" role="img" aria-labelledby="title desc">
   <title id="title">JEEPinnacle logo</title>
-  <desc id="desc">Stylized wordmark for JEEPinnacle mentorship venture</desc>
+  <desc id="desc">JEEPinnacle wordmark with a geometric mountain peak and academic pathway symbol</desc>
   <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#3C63FC" />
-      <stop offset="100%" stop-color="#8D55FC" />
+    <linearGradient id="markGradient" x1="8" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#60A5FA" />
+      <stop offset="0.55" stop-color="#2563EB" />
+      <stop offset="1" stop-color="#7C3AED" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="70" y1="18" x2="245" y2="42" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F8FAFC" />
+      <stop offset="1" stop-color="#BFDBFE" />
     </linearGradient>
   </defs>
-  <rect width="160" height="48" rx="12" fill="#0F1426" />
-  <g fill="url(#grad)" font-family="'Manrope', 'Helvetica Neue', Arial, sans-serif" font-weight="700">
-    <text x="18" y="30" font-size="20">JEE</text>
-    <text x="67" y="30" font-size="18" fill="#F5F7FF">Pinnacle</text>
+  <rect width="260" height="64" rx="18" fill="#07111F" />
+  <rect x="1" y="1" width="258" height="62" rx="17" fill="none" stroke="#1D4ED8" stroke-opacity="0.34" />
+
+  <g aria-hidden="true">
+    <rect x="12" y="10" width="44" height="44" rx="14" fill="url(#markGradient)" />
+    <path d="M19 43L32.8 20.5L40.6 33.2L45.2 26.4L52 43H19Z" fill="#F8FAFC" opacity="0.96" />
+    <path d="M27.4 43C30.9 36.7 35.1 32.4 40.6 33.2" fill="none" stroke="#07111F" stroke-width="3.6" stroke-linecap="round" />
+    <circle cx="33" cy="21" r="2.3" fill="#DBEAFE" />
+  </g>
+
+  <g font-family="'Manrope', 'Inter', 'Helvetica Neue', Arial, sans-serif">
+    <text x="70" y="39" fill="url(#textGradient)" font-size="25" font-weight="800" letter-spacing="0">JEE</text>
+    <text x="116" y="39" fill="#F8FAFC" font-size="25" font-weight="700" letter-spacing="0">Pinnacle</text>
+    <text x="72" y="51" fill="#93C5FD" font-size="8.5" font-weight="700" letter-spacing="2">MATHS  PCM  MENTORSHIP</text>
   </g>
 </svg>
