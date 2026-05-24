@@ -117,7 +117,7 @@ h3 { font-size: clamp(1rem, 1.6vw, 1.2rem);   font-weight: 700; }
   letter-spacing: -0.01em;
   color: var(--text);
 }
-.logo img { height: 2.45rem; width: auto; border-radius: var(--radius-sm); }
+.logo img { height: 3.15rem; width: auto; border-radius: var(--radius-sm); }
 .site-nav ul {
   list-style: none;
   display: flex;
@@ -649,6 +649,7 @@ details p {
   }
   .site-nav.is-open   { display: block; }
   .site-nav ul        { flex-direction: column; align-items: flex-start; gap: 1.2rem; }
+  .logo img           { height: 2.75rem; }
   .nav-toggle         { display: flex; }
   .floating-cta       { right: 1rem; bottom: 1rem; }
 }
