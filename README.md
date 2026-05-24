@@ -41,3 +41,4 @@ This repository ships with a GitHub Actions workflow that publishes the static b
 1. Enable GitHub Pages in the repository settings and select **GitHub Actions** as the source.
 2. Merge changes into `main` (or re-run the workflow) to build the site and deploy the artifact.
 3. Monitor the workflow run for the published page URL and any status updates.
+4. After the run finishes, open the live Pages site in a new tab to confirm the latest hero, testimonials, and forms render without caching artifacts.
