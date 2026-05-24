@@ -249,7 +249,7 @@ const testimonials = [
   }
 ];
 
-const STORAGE_KEY = "jeeachievers-testimonials";
+const STORAGE_KEY = "jeepinnacle-testimonials";
 
 function loadStoredTestimonials() {
   try {

@@ -1,6 +1,6 @@
-# JEEAchievers Static Site
+# JEEPinnacle Static Site
 
-Marketing site for **JEEAchievers**, a founder-led IIT-JEE and Maths mentorship venture. The project ships as a static bundle designed for drop-in hosting on Netlify, Vercel, GitHub Pages, or any CDN.
+Marketing site for **JEEPinnacle**, a founder-led IIT-JEE and Maths mentorship venture. The project ships as a static bundle designed for drop-in hosting on Netlify, Vercel, GitHub Pages, or any CDN.
 
 ## Features
 
