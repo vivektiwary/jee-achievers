@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
   <title id="title">JEEAchievers Open Graph Graphic</title>
-  <desc id="desc">Hero banner summarizing JEEAchievers IIT-JEE coaching outcomes</desc>
+  <desc id="desc">Hero banner summarizing JEEAchievers founder-led IIT-JEE mentorship</desc>
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0F1426" />
@@ -11,10 +11,10 @@
   <rect width="1200" height="630" fill="url(#bg)" />
   <g fill="#F5F7FF" font-family="'Manrope', 'Helvetica Neue', Arial, sans-serif">
     <text x="80" y="150" font-size="72" font-weight="800">JEEAchievers</text>
-    <text x="80" y="230" font-size="42" font-weight="600">Premier IIT-JEE Coaching</text>
-    <text x="80" y="320" font-size="28" font-weight="500">320+ Top 1000 AIRs • 97% score improvement • 12 hybrid hubs</text>
+    <text x="80" y="230" font-size="42" font-weight="600">Founder-Led IIT-JEE & Maths Mentorship</text>
+    <text x="80" y="320" font-size="28" font-weight="500">Personal classes • PYQ practice • Direct doubt support</text>
     <rect x="80" y="380" width="480" height="6" rx="3" fill="#8D55FC" />
-    <text x="80" y="450" font-size="28" font-weight="400">Adaptive analytics, elite mentors & immersive labs.</text>
+    <text x="80" y="450" font-size="28" font-weight="400">Focused guidance from Gunjan Sir for serious aspirants.</text>
     <text x="80" y="520" font-size="24" font-weight="500">jeeachievers.com</text>
   </g>
 </svg>

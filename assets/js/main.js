@@ -436,7 +436,7 @@ function handleFormSubmit(event) {
   const payload = Object.fromEntries(formData.entries());
   console.table(payload);
   form.reset();
-  alert("Thank you! Our counselors will reach out shortly.");
+  alert("Thank you! Gunjan will reach out shortly.");
 }
 
 if (contactForm) {
