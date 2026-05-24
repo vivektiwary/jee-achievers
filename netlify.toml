@@ -1,0 +1,23 @@
+[build]
+  publish = "."
+
+# Redirect bare .in domain → .com
+[[redirects]]
+  from    = "https://jeepinnacle.in/*"
+  to      = "https://jeepinnacle.com/:splat"
+  status  = 301
+  force   = true
+
+# Redirect www.in → www.com (catches both variants)
+[[redirects]]
+  from    = "https://www.jeepinnacle.in/*"
+  to      = "https://www.jeepinnacle.com/:splat"
+  status  = 301
+  force   = true
+
+# Redirect bare .com (no www) → www.com  (canonical)
+[[redirects]]
+  from    = "https://jeepinnacle.com/*"
+  to      = "https://www.jeepinnacle.com/:splat"
+  status  = 301
+  force   = true
