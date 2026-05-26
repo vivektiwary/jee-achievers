@@ -285,8 +285,6 @@ if (savedTestimonials.length) {
 const sliderContainer = document.querySelector(".testimonial-slider");
 const testimonialForm = document.querySelector(".testimonial-form");
 const testimonialButtons = document.querySelectorAll("[data-action]");
-const reviewButtons = document.querySelectorAll("[data-review-source]");
-const reviewList = document.querySelector(".review-list");
 const contactForm = document.querySelector(".contact-form");
 const newsletterForm = document.querySelector(".newsletter-form");
 const navToggle = document.querySelector(".nav-toggle");
@@ -294,31 +292,6 @@ const siteNav = document.getElementById("site-nav");
 const floatingBtn = document.querySelector(".floating-btn");
 const floatingPanel = document.getElementById("floating-panel");
 const WHATSAPP_BUSINESS_NUMBER = "918310906345";
-
-const REVIEW_ENDPOINTS = {
-  urbanpro: {
-    endpoint: "",
-    transform: data =>
-      (data?.reviews || []).map(review => ({
-        author: review.name || "UrbanPro Learner",
-        rating: review.rating || 5,
-        message: review.comment || "",
-        source: "UrbanPro",
-        url: review.url || "https://www.urbanpro.com/"
-      }))
-  },
-  google: {
-    endpoint: "",
-    transform: data =>
-      (data?.result?.reviews || data?.reviews || []).map(review => ({
-        author: review.author_name || "Google Reviewer",
-        rating: review.rating || 5,
-        message: review.text || "",
-        source: "Google",
-        url: review.author_url || "https://maps.google.com"
-      }))
-  }
-};
 
 function renderTestimonials(items) {
   if (!sliderContainer) return;
@@ -401,58 +374,6 @@ if (testimonialForm) {
   testimonialForm.addEventListener("submit", handleTestimonialForm);
 }
 
-function renderReviews(reviews) {
-  if (!reviewList) return;
-  reviewList.innerHTML = "";
-  if (!reviews.length) {
-    reviewList.innerHTML = `<p class="form-note">No reviews fetched. Configure your API endpoint or add testimonials manually.</p>`;
-    return;
-  }
-
-  reviews.forEach(review => {
-    const card = document.createElement("article");
-    card.className = "review-card";
-    const ratingStars = "★".repeat(Math.round(review.rating || 5));
-    card.innerHTML = `
-      <header>
-        <span>${review.author}</span>
-        <span class="rating" aria-label="${review.rating} star rating">${ratingStars}</span>
-      </header>
-      <p>${review.message || ""}</p>
-      <a class="form-note" href="${review.url}" target="_blank" rel="noopener">View on ${review.source}</a>
-    `;
-    reviewList.appendChild(card);
-  });
-}
-
-async function fetchReviews(source) {
-  if (!reviewList) return;
-  reviewList.innerHTML = `<p class="form-note">Fetching ${source} reviews…</p>`;
-  const config = (window.reviewConfig && window.reviewConfig[source]) || REVIEW_ENDPOINTS[source];
-
-  if (!config || !config.endpoint) {
-    reviewList.innerHTML = `<p class="form-note">Add your ${source} reviews API endpoint in <code>assets/js/main.js</code> under REVIEW_ENDPOINTS to enable live syncing.</p>`;
-    return;
-  }
-
-  try {
-    const response = await fetch(config.endpoint);
-    if (!response.ok) {
-      throw new Error(`Request failed with status ${response.status}`);
-    }
-    const data = await response.json();
-    const reviews = (config.transform && config.transform(data)) || [];
-    renderReviews(reviews);
-  } catch (error) {
-    console.error(error);
-    reviewList.innerHTML = `<p class="form-note">Unable to fetch ${source} reviews right now. Please verify your API key or enable CORS on the endpoint.</p>`;
-  }
-}
-
-reviewButtons.forEach(button => {
-  button.addEventListener("click", () => fetchReviews(button.dataset.reviewSource));
-});
-
 function handleFormSubmit(event) {
   event.preventDefault();
   const form = event.currentTarget;
@@ -498,4 +419,3 @@ if (currentYearEl) {
 }
 
 renderTestimonials(testimonials);
-renderReviews([]);
