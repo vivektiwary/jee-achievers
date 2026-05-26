@@ -293,6 +293,7 @@ const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.getElementById("site-nav");
 const floatingBtn = document.querySelector(".floating-btn");
 const floatingPanel = document.getElementById("floating-panel");
+const WHATSAPP_BUSINESS_NUMBER = "918310906345";
 
 const REVIEW_ENDPOINTS = {
   urbanpro: {
@@ -336,6 +337,29 @@ function renderTestimonials(items) {
     `;
     sliderContainer.appendChild(card);
   });
+}
+
+function formatContactInquiry(form) {
+  const formData = new FormData(form);
+  const batches = formData.getAll("batch");
+  const lines = [
+    "New JEEPinnacle inquiry",
+    "",
+    `Student: ${formData.get("student") || "Not provided"}`,
+    `Parent contact: ${formData.get("phone") || "Not provided"}`,
+    `Email: ${formData.get("email") || "Not provided"}`,
+    `Current class: ${formData.get("class") || "Not provided"}`,
+    `Preferred batch: ${batches.length ? batches.join(", ") : "Not provided"}`,
+    `Message: ${formData.get("message") || "Not provided"}`
+  ];
+
+  return lines.join("\n");
+}
+
+function openWhatsAppInquiry(form) {
+  const message = encodeURIComponent(formatContactInquiry(form));
+  const whatsappUrl = `https://wa.me/${WHATSAPP_BUSINESS_NUMBER}?text=${message}`;
+  window.open(whatsappUrl, "_blank", "noopener");
 }
 
 function handleTestimonialForm(event) {
@@ -432,11 +456,16 @@ reviewButtons.forEach(button => {
 function handleFormSubmit(event) {
   event.preventDefault();
   const form = event.currentTarget;
-  const formData = new FormData(form);
-  const payload = Object.fromEntries(formData.entries());
-  console.table(payload);
+
+  if (form === contactForm) {
+    openWhatsAppInquiry(form);
+    form.reset();
+    alert("Your inquiry is ready in WhatsApp Business. Please tap send to submit it.");
+    return;
+  }
+
   form.reset();
-  alert("Thank you! Gunjan will reach out shortly.");
+  alert("Thank you! You have been added to the newsletter.");
 }
 
 if (contactForm) {
