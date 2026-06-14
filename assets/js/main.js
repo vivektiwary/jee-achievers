@@ -292,6 +292,7 @@ const siteNav = document.getElementById("site-nav");
 const floatingBtn = document.querySelector(".floating-btn");
 const floatingPanel = document.getElementById("floating-panel");
 const WHATSAPP_BUSINESS_NUMBER = "918310906345";
+const INQUIRY_EMAIL = "hello@jeepinnacle.com";
 
 function renderTestimonials(items) {
   if (!sliderContainer) return;
@@ -329,10 +330,48 @@ function formatContactInquiry(form) {
   return lines.join("\n");
 }
 
+function encodeFormData(form) {
+  const formData = new FormData(form);
+  const params = new URLSearchParams();
+  formData.forEach((value, key) => {
+    params.append(key, value);
+  });
+  return params;
+}
+
+function storeNetlifySubmission(form) {
+  if (!form.matches("[data-netlify='true']")) return;
+
+  const body = encodeFormData(form).toString();
+  if (navigator.sendBeacon) {
+    const payload = new Blob([body], { type: "application/x-www-form-urlencoded" });
+    if (navigator.sendBeacon("/", payload)) return;
+  }
+
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body,
+    keepalive: true
+  }).catch(error => {
+    console.warn("Unable to store form submission", error);
+  });
+}
+
+function isMobileViewport() {
+  return window.matchMedia("(max-width: 760px)").matches || /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+}
+
 function openWhatsAppInquiry(form) {
   const message = encodeURIComponent(formatContactInquiry(form));
   const whatsappUrl = `https://wa.me/${WHATSAPP_BUSINESS_NUMBER}?text=${message}`;
   window.open(whatsappUrl, "_blank", "noopener");
+}
+
+function openEmailInquiry(form) {
+  const subject = encodeURIComponent("New JEEPinnacle inquiry");
+  const body = encodeURIComponent(formatContactInquiry(form));
+  window.location.href = `mailto:${INQUIRY_EMAIL}?subject=${subject}&body=${body}`;
 }
 
 function handleTestimonialForm(event) {
@@ -379,14 +418,21 @@ function handleFormSubmit(event) {
   const form = event.currentTarget;
 
   if (form === contactForm) {
-    openWhatsAppInquiry(form);
+    storeNetlifySubmission(form);
+    if (isMobileViewport()) {
+      openWhatsAppInquiry(form);
+      alert("Your inquiry is ready in WhatsApp Business. Please tap send to submit it.");
+    } else {
+      openEmailInquiry(form);
+      alert("An email draft has been prepared with your inquiry details. Please send it from your email app.");
+    }
     form.reset();
-    alert("Your inquiry is ready in WhatsApp Business. Please tap send to submit it.");
     return;
   }
 
+  storeNetlifySubmission(form);
   form.reset();
-  alert("Thank you! You have been added to the newsletter.");
+  alert("Thank you! You will receive JEE strategies at this email.");
 }
 
 if (contactForm) {
@@ -398,10 +444,23 @@ if (newsletterForm) {
 }
 
 if (navToggle && siteNav) {
+  const closeSiteNav = () => {
+    navToggle.setAttribute("aria-expanded", "false");
+    siteNav.classList.remove("is-open");
+  };
+
   navToggle.addEventListener("click", () => {
     const expanded = navToggle.getAttribute("aria-expanded") === "true";
     navToggle.setAttribute("aria-expanded", String(!expanded));
-    siteNav.classList.toggle("is-open");
+    siteNav.classList.toggle("is-open", !expanded);
+  });
+
+  siteNav.addEventListener("click", event => {
+    if (event.target.closest("a")) closeSiteNav();
+  }, true);
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") closeSiteNav();
   });
 }
 

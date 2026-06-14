@@ -7,7 +7,7 @@ Marketing site for **JEEPinnacle**, a founder-led IIT-JEE and Maths mentorship v
 - **SEO-first build**: enriched `<head>` metadata, JSON-LD for organization, course, FAQs, and breadcrumbs, plus sitemap and robots directives.
 - **Rich landing page**: hero, programs, differentiators, results, testimonials, reviews, contact form, and FAQ blocks styled with a modern gradient system.
 - **Testimonials & reviews**: interactive slider with local persistence and configurable hooks to ingest Google or UrbanPro reviews.
-- **Offline-friendly touches**: PWA manifest, touch icons, downloadable brochure placeholder, and accessible fallbacks.
+- **Offline-friendly touches**: PWA manifest, touch icons, brochure request CTA, and accessible fallbacks.
 
 ## Getting started
 
@@ -23,6 +23,9 @@ Marketing site for **JEEPinnacle**, a founder-led IIT-JEE and Maths mentorship v
 │   ├── css/style.css      # Global styles and layout helpers
 │   ├── js/main.js         # Navigation, forms, and testimonial logic
 │   └── img/               # Brand assets and sharing previews
+├── teacher-in-marathahalli/
+├── best-teacher-spice-garden-bangalore/
+├── iit-jee-maths-coaching-marathahalli/
 ├── manifest.webmanifest   # PWA metadata
 ├── robots.txt             # Crawl directives
 └── sitemap.xml            # Search engine discovery hints
@@ -32,7 +35,11 @@ Marketing site for **JEEPinnacle**, a founder-led IIT-JEE and Maths mentorship v
 
 - Update the canonical domain inside `index.html`, `sitemap.xml`, and `robots.txt` before going live.
 - Supply production review API endpoints (with the required CORS headers) to surface third-party ratings on the site.
-- Replace the placeholder brochure link with a real PDF and extend the manifest icons if publishing to app stores.
+- Replace the brochure request CTA with a real PDF download if a brochure asset is published.
+- To receive inquiry emails through Netlify, open **Site configuration → Forms → Form notifications**, add an email notification for the `contact` form, and send it to `hello@jeepinnacle.com` or your preferred inbox.
+- Add a separate notification for the `newsletter` form if newsletter signups should go to an inbox or automation.
+- The contact form opens WhatsApp on mobile devices and prepares an email draft on desktop browsers.
+- Keep local SEO pages updated with real proof: verified ranks, score improvements, demo lecture videos, parent review screenshots, and classroom photos.
 
 ## Continuous deployment
 
