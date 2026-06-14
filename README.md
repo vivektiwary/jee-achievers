@@ -36,7 +36,7 @@ Marketing site for **JEEPinnacle**, a founder-led IIT-JEE and Maths mentorship v
 - Update the canonical domain inside `index.html`, `sitemap.xml`, and `robots.txt` before going live.
 - Supply production review API endpoints (with the required CORS headers) to surface third-party ratings on the site.
 - Replace the brochure request CTA with a real PDF download if a brochure asset is published.
-- To receive inquiry emails through Netlify, open **Site configuration → Forms → Form notifications**, add an email notification for the `contact` form, and send it to `hello@jeepinnacle.com` or your preferred inbox.
+- To receive inquiry emails through Netlify, open **Site configuration → Forms → Form notifications**, add an email notification for the `contact` form, and send it to `gunjankumar306@gmail.com` or your preferred inbox.
 - Add a separate notification for the `newsletter` form if newsletter signups should go to an inbox or automation.
 - The contact form opens WhatsApp on mobile devices and prepares an email draft on desktop browsers.
 - Keep local SEO pages updated with real proof: verified ranks, score improvements, demo lecture videos, parent review screenshots, and classroom photos.

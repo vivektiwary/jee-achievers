@@ -491,6 +491,8 @@ h3 { font-size: clamp(1rem, 1.6vw, 1.2rem);   font-weight: 700; }
   gap: 1.2rem;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
+.form-full { grid-column: 1 / -1; }
+.contact-form { scroll-margin-top: 7rem; }
 label span {
   display: block;
   font-weight: 600;
@@ -713,6 +715,9 @@ details p {
 }
 
 @media (max-width: 720px) {
+  #contact .grid-two      { gap: 1.5rem; }
+  #contact .map-embed     { display: none; }
+  .contact-form           { margin-top: 0; scroll-margin-top: 5.5rem; }
   .testimonial-slider   { grid-auto-columns: 100%; }
   .floating-panel       { width: min(320px, 90vw); }
   .hero-stats           { grid-template-columns: 1fr 1fr; }

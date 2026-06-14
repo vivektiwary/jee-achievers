@@ -292,7 +292,7 @@ const siteNav = document.getElementById("site-nav");
 const floatingBtn = document.querySelector(".floating-btn");
 const floatingPanel = document.getElementById("floating-panel");
 const WHATSAPP_BUSINESS_NUMBER = "918310906345";
-const INQUIRY_EMAIL = "hello@jeepinnacle.com";
+const INQUIRY_EMAIL = "gunjankumar306@gmail.com";
 
 function renderTestimonials(items) {
   if (!sliderContainer) return;
