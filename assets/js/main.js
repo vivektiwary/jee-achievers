@@ -421,10 +421,10 @@ function handleFormSubmit(event) {
     storeNetlifySubmission(form);
     if (isMobileViewport()) {
       openWhatsAppInquiry(form);
-      alert("Your inquiry is ready in WhatsApp Business. Please tap send to submit it.");
+      alert("Your demo request is ready in WhatsApp Business. Please tap send to share it.");
     } else {
       openEmailInquiry(form);
-      alert("An email draft has been prepared with your inquiry details. Please send it from your email app.");
+      alert("Your demo request has been saved through the site form, and an email draft has been prepared. Please send it from your email app.");
     }
     form.reset();
     return;
