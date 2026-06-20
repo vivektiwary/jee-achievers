@@ -270,6 +270,11 @@ h3 { font-size: clamp(1rem, 1.6vw, 1.2rem);   font-weight: 700; }
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
+.proof-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
 .proof-grid,
 .parent-grid {
   display: grid;
