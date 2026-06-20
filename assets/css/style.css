@@ -274,6 +274,7 @@ h3 { font-size: clamp(1rem, 1.6vw, 1.2rem);   font-weight: 700; }
   display: flex;
   flex-wrap: wrap;
   gap: 0.65rem;
+  justify-content: flex-end;
 }
 .proof-grid,
 .parent-grid {
@@ -784,8 +785,14 @@ details p {
   #contact .grid-two      { gap: 1.5rem; }
   #contact .map-embed     { display: none; }
   .contact-form           { margin-top: 0; scroll-margin-top: 5.5rem; }
+  .proof-actions          { width: 100%; justify-content: stretch; }
+  .proof-actions .btn     { width: 100%; min-height: 44px; padding-inline: 1rem; }
+  .testimonial-actions    { width: 100%; display: grid; grid-template-columns: repeat(2, 44px); justify-content: start; }
+  .testimonial-actions a.btn { grid-column: 1 / -1; width: 100%; min-height: 44px; padding-inline: 1rem; }
+  .testimonial-actions button.btn { width: 44px; height: 44px; }
   .testimonial-slider   { grid-auto-columns: 100%; }
   .review-source-panel   { align-items: flex-start; flex-direction: column; }
+  .review-source-panel a { width: 100%; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--blue-border); border-radius: var(--radius-sm); }
   .floating-panel       { width: min(320px, 90vw); }
   .hero-stats           { grid-template-columns: 1fr 1fr; }
   .hero-stats > div     { border-right: none; border-bottom: 1px solid var(--border); }
