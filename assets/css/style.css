@@ -302,6 +302,19 @@ h3 { font-size: clamp(1rem, 1.6vw, 1.2rem);   font-weight: 700; }
   color: var(--text-muted);
   font-size: 0.82rem;
 }
+.proof-card a {
+  display: inline-flex;
+  margin-top: 0.35rem;
+  color: var(--blue-light);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+.proof-card-google {
+  border-color: var(--blue-border);
+}
+.proof-card-google .proof-metric {
+  color: var(--blue-light);
+}
 
 /* ── LOCAL SEO CARDS ─────────────────────────────────────── */
 .local-grid {
@@ -485,7 +498,42 @@ h3 { font-size: clamp(1rem, 1.6vw, 1.2rem);   font-weight: 700; }
   color: var(--text-muted);
   font-size: 0.83rem;
 }
-.testimonial-actions .btn { width: 40px; height: 40px; padding: 0; }
+.testimonial-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+.testimonial-actions button.btn { width: 40px; height: 40px; padding: 0; }
+.review-source-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--blue-border);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.72);
+}
+.review-source-panel div {
+  display: grid;
+  gap: 0.15rem;
+}
+.review-source-panel strong {
+  color: var(--text);
+  font-size: 0.92rem;
+}
+.review-source-panel span {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+.review-source-panel a {
+  flex: 0 0 auto;
+  color: var(--blue-light);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
 
 /* ── FORMS ───────────────────────────────────────────────── */
 .testimonial-form,
@@ -732,6 +780,7 @@ details p {
   #contact .map-embed     { display: none; }
   .contact-form           { margin-top: 0; scroll-margin-top: 5.5rem; }
   .testimonial-slider   { grid-auto-columns: 100%; }
+  .review-source-panel   { align-items: flex-start; flex-direction: column; }
   .floating-panel       { width: min(320px, 90vw); }
   .hero-stats           { grid-template-columns: 1fr 1fr; }
   .hero-stats > div     { border-right: none; border-bottom: 1px solid var(--border); }
