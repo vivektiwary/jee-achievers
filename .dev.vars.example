@@ -1,0 +1,2 @@
+# Replace this value before using the teacher workspace; never commit .dev.vars.
+ADMIN_TOKEN=replace-with-a-random-secret-of-at-least-32-characters

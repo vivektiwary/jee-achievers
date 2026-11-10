@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Teacher workspace · JEE Pinnacle</title>
+    <link rel="stylesheet" href="/assets/css/test.css" />
+    <script>
+      window.MathJax = {
+        tex: { inlineMath: [["\\(", "\\)"]] },
+        options: { enableMenu: false },
+      };
+    </script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"
+    ></script>
+    <script type="module" src="/assets/js/admin.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="/"><strong>JEE PINNACLE</strong></a
+      ><span>Teacher workspace</span>
+    </header>
+    <main>
+      <span class="eyebrow">Review · Publish · Follow up</span>
+      <h1>Your assessment desk.</h1>
+      <form id="login" class="card">
+        <label for="key">Administrator key</label
+        ><input
+          id="key"
+          type="password"
+          autocomplete="off"
+          required
+          minlength="32"
+        />
+        <p class="muted">
+          Use the secret configured for this deployment. It stays in memory for
+          this tab.
+        </p>
+        <button>Open workspace</button>
+      </form>
+      <p id="message" role="status" class="status"></p>
+      <div id="workspace" hidden>
+        <div class="row">
+          <button id="logout" class="secondary">Sign out</button
+          ><button id="refresh" class="secondary">Refresh</button
+          ><a href="/test/">Open student test</a>
+        </div>
+        <section class="card">
+          <h2>Post a question set</h2>
+          <p>
+            Upload a JSON file or paste a set below. Uploads create a draft;
+            click Publish only after reviewing. Posting a revision creates a new
+            version. Existing attempts keep their original version.
+          </p>
+          <label for="file">Import JSON</label
+          ><input id="file" type="file" accept=".json,application/json" /><label
+            for="slug"
+            >Link name</label
+          ><input
+            id="slug"
+            value="maths-readiness-v1"
+            pattern="[a-z0-9-]+"
+          /><label for="title">Test title</label
+          ><input id="title" value="JEE Maths Readiness Test" /><label
+            for="minutes"
+            >Duration (minutes)</label
+          ><input
+            id="minutes"
+            type="number"
+            min="5"
+            max="180"
+            value="75"
+          /><label for="bank">Questions JSON (array, or full test object)</label
+          ><textarea
+            id="bank"
+            spellcheck="false"
+            placeholder='[{"id":1,"topic":"Algebra","type":"single","question":"...","options":{"A":"...","B":"...","C":"...","D":"..."},"answer":["B"],"solution":"...","wrong_options":{"A":{"tag":"concept","why":"..."},"C":{"tag":"condition","why":"..."},"D":{"tag":"sign","why":"..."}}}]'
+          ></textarea>
+          <p class="muted">
+            Use question types single or multi, four options A–D, answer as an
+            array, a worked solution and a why/tag explanation for each wrong
+            option. Maths supports \(LaTeX\) on the student page.
+          </p>
+          <button id="upload">Save draft</button>
+        </section>
+        <section class="card">
+          <h2>Test versions</h2>
+          <div id="tests"></div>
+        </section>
+        <section class="card">
+          <h2>Student responses</h2>
+          <p class="muted">
+            Includes started tests. Open a response to inspect saved answers and
+            its original question set.
+          </p>
+          <div id="responses" class="overflow"></div>
+          <button id="more-responses" class="secondary" hidden>
+            Load more responses
+          </button>
+        </section>
+        <section class="card">
+          <h2>Contact and newsletter requests</h2>
+          <div id="inquiries" class="overflow"></div>
+          <button id="more-inquiries" class="secondary" hidden>
+            Load more requests
+          </button>
+        </section>
+        <section class="card" id="review-card" hidden>
+          <h2>Question set review</h2>
+          <div id="review"></div>
+        </section>
+        <section id="detail-card" class="card" hidden>
+          <h2>Response detail</h2>
+          <pre id="detail"></pre>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

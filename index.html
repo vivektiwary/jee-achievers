@@ -229,6 +229,7 @@
       </button>
       <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
         <ul>
+          <li><a href="/test/">Free maths test</a></li>
           <li><a href="#programs">Programs</a></li>
           <li><a href="#why-us">Why JEEPinnacle</a></li>
           <li><a href="#bengaluru-coaching">Bengaluru Coaching</a></li>
@@ -562,7 +563,7 @@
             <iframe title="JEEPinnacle Bengaluru location" src="https://www.google.com/maps?q=%23301%2C%20S%20R%20Abode%2C%20Lakshminarayana%20Pura%2C%20Silver%20Springs%20Layout%2C%20Marathahalli%2C%20Bengaluru%2C%20Karnataka%20560037&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
-        <form class="contact-form" id="demo-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" aria-label="Book a demo class">
+        <form class="contact-form" id="demo-form" name="contact" method="POST" aria-label="Book a demo class">
           <input type="hidden" name="form-name" value="contact" />
           <p class="sr-only">
             <label>Do not fill this field <input name="bot-field" /></label>
@@ -604,11 +605,9 @@
               <textarea name="message" rows="4" placeholder="Tell us about your goals"></textarea>
             </label>
           </div>
-          <label class="consent">
-            <input type="checkbox" name="consent" required /> I agree to receive updates from JEEPinnacle via WhatsApp/SMS.
-          </label>
+          <label class="consent"><input type="checkbox" name="consent" required> <span>I am the parent or guardian, or have their permission. I agree to JEE Pinnacle storing this inquiry and contacting me about classes. <a href="/test/#privacy">Privacy details</a></span></label>
           <button class="btn btn-primary" type="submit">Book Demo Class</button>
-          <p class="form-note">On mobile, this opens WhatsApp with your demo request ready to send. On laptop or desktop, it saves the request through the site form and opens an email draft. You can also use the WhatsApp chat button anytime.</p>
+          <p class="form-note">Your request is saved securely for Gunjan to follow up. You can also use the WhatsApp chat button anytime.</p>
         </form>
       </div>
     </section>
@@ -679,7 +678,7 @@
       </div>
       <div>
         <h3>Newsletter</h3>
-        <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true" data-netlify-honeypot="newsletter-bot-field">
+        <form class="newsletter-form" name="newsletter" method="POST">
           <input type="hidden" name="form-name" value="newsletter" />
           <p class="sr-only">
             <label>Do not fill this field <input name="newsletter-bot-field" /></label>
@@ -688,6 +687,7 @@
             <span class="sr-only">Email</span>
             <input type="email" name="email" placeholder="Email address" required />
           </label>
+          <label class="consent"><input type="checkbox" name="consent" required> <span>I agree to storage of my email and receiving JEE updates. Contact gunjankumar306@gmail.com to unsubscribe or request deletion.</span></label>
           <button class="btn btn-primary" type="submit">Join</button>
         </form>
         <p class="form-note">No spam. Just actionable JEE strategies every fortnight.</p>

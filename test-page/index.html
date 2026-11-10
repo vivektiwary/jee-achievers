@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Maths Readiness Test · JEE Pinnacle</title>
+    <link rel="stylesheet" href="/assets/css/test.css" />
+    <script>
+      window.MathJax = {
+        tex: { inlineMath: [["\\(", "\\)"]] },
+        options: { enableMenu: false },
+      };
+    </script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"
+    ></script>
+    <script type="module" src="/assets/js/test.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="/"><strong>JEE PINNACLE</strong></a
+      ><span>Maths readiness test</span>
+    </header>
+    <main>
+      <section id="intro" class="grid">
+        <div>
+          <span class="eyebrow">Find your next step</span>
+          <h1>Understand where your maths stands.</h1>
+          <p class="muted">
+            Take a focused JEE maths test. See your score, topics to work on and
+            patterns in your mistakes.
+          </p>
+          <div class="card">
+            <h2>Before you begin</h2>
+            <p>
+              Use paper for rough work. Don’t use a calculator or outside help.
+              The timer starts when you begin and continues if you close this
+              page.
+            </p>
+            <p>
+              Each question carries 4 marks. Single-correct: +4 correct, −1
+              wrong. Multi-correct: +4 for the exact set, +1 per correct
+              selection for an incomplete set, −2 if any wrong option is
+              selected. Unanswered: 0.
+            </p>
+            <p class="muted">
+              This is a practice diagnostic, not a prediction of your JEE rank.
+            </p>
+          </div>
+        </div>
+        <form id="start" class="card">
+          <h2>Ready to try?</h2>
+          <label for="test">Choose a test</label
+          ><select id="test" required>
+            <option value="">Loading tests…</option>
+          </select>
+          <p id="duration" class="muted"></p>
+          <label for="parent">Parent or guardian’s name</label
+          ><input
+            id="parent"
+            autocomplete="name"
+            required
+            maxlength="100"
+            minlength="2"
+          /><label for="phone">Parent or guardian’s phone</label
+          ><input
+            id="phone"
+            type="tel"
+            autocomplete="tel"
+            required
+            pattern="[+0-9 ()-]{10,20}"
+            maxlength="20"
+          /><label class="check"
+            ><input id="consent" type="checkbox" required /><span
+              >I am the parent or guardian, or have their permission. I agree
+              that JEE Pinnacle may store these contact details, answers and
+              results to provide this assessment and contact the parent about
+              the result. <a href="#privacy">Privacy details</a></span
+            ></label
+          ><button id="begin" disabled>Start test</button>
+          <p class="muted">
+            The test saves answers on this device and the server. Return using
+            the same browser to resume.
+          </p>
+        </form>
+      </section>
+      <p id="message" class="status" role="status" aria-live="polite"></p>
+      <section id="exam" hidden>
+        <div class="bar">
+          <strong id="exam-title"></strong><span id="timer" role="timer"></span
+          ><span id="saved" role="status"></span>
+        </div>
+        <p class="muted">
+          Select your answers below. You can change them until you submit or
+          time expires.
+        </p>
+        <form id="answers">
+          <div id="questions"></div>
+          <div class="card row">
+            <button id="submit">Submit test</button><span id="progress"></span>
+          </div>
+        </form>
+      </section>
+      <section id="result" hidden>
+        <span class="eyebrow">Your readiness report</span>
+        <h1>A clearer path forward.</h1>
+        <div class="card">
+          <div id="score" class="score"></div>
+          <p id="result-note" class="muted"></p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h2>Topic breakdown</h2>
+            <div id="topics"></div>
+          </div>
+          <div class="card">
+            <h2>Mistake patterns</h2>
+            <div id="mistakes"></div>
+            <p class="muted">
+              These labels describe selected wrong options. Review them with a
+              teacher to understand the cause.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Turn this into a study plan</h2>
+          <p>
+            Discuss your result with Gunjan and decide what to practise next.
+          </p>
+          <a
+            class="button"
+            id="book"
+            href="https://wa.me/918310906345"
+            target="_blank"
+            rel="noopener"
+            >Discuss with Gunjan</a
+          >
+          <button class="secondary" id="new-test" type="button">
+            Take another test
+          </button>
+        </div>
+      </section>
+      <section id="privacy" class="card">
+        <h2>Your assessment data</h2>
+        <p>
+          JEE Pinnacle stores the parent’s name and phone number, consent, test
+          answers, score, test timing and the campaign link used to reach this
+          page. Gunjan and authorised administrators can access this information
+          to review the assessment and follow up. Data is hosted using
+          Cloudflare. Contact
+          <a href="mailto:gunjankumar306@gmail.com">gunjankumar306@gmail.com</a>
+          to request access or deletion. Don’t enter a child’s phone number.
+          Avoid shared devices; your browser keeps a key that allows access to
+          this attempt.
+        </p>
+      </section>
+    </main>
+    <footer>JEE Pinnacle · Maths mentorship with Gunjan Kumar</footer>
+  </body>
+</html>
