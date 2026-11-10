@@ -1,5 +1,19 @@
 # Cloudflare migration and launch
 
+## Current resources (10 November 2026)
+
+- Account: `25ec919491ac9d7fa22c91abcdbd374b` (`vivek.raj062@gmail.com`).
+- Pages project: `jeepinnacle`; production fallback: https://jeepinnacle.pages.dev.
+- D1: `jeepinnacle`, UUID `235fa02c-1b20-4698-8d46-638affd8e4cf`, binding `DB`, APAC placement.
+- Schema migration `0001_platform.sql` applied remotely.
+- Real 30-question bank imported as an unpublished draft (`maths-readiness-v1`).
+- Live smoke check passed: creation, autosave, submission, marking and authenticated response retrieval. Its synthetic records were removed.
+- Production admin secret: macOS Keychain, service `JEE Pinnacle Teacher Admin`, account `jeepinnacle`.
+- `.com` already uses Cloudflare nameservers. `www` originally pointed to `vivektiwary.github.io`; `.in` shows invalid nameservers.
+- `www.jeepinnacle.com` is attached to the Pages project; DNS cutover is pending.
+
+Reuse these resources. The provisioning commands below describe initial setup for a new environment; do not recreate the live database/project.
+
 ## 1. Authenticate and create resources
 
 ```sh

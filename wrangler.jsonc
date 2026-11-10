@@ -7,8 +7,7 @@
     {
       "binding": "DB",
       "database_name": "jeepinnacle",
-      // Replace with the ID returned by `npx wrangler d1 create jeepinnacle`.
-      "database_id": "00000000-0000-0000-0000-000000000000",
+      "database_id": "235fa02c-1b20-4698-8d46-638affd8e4cf",
       "migrations_dir": "migrations",
     },
   ],

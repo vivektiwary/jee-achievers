@@ -20,7 +20,7 @@ npm run db:local
 npm run dev
 ```
 
-Open the local URL printed by Wrangler (normally http://localhost:8788). The zero database UUID in the initial config is a local placeholder; production needs the real UUID.
+Open the local URL printed by Wrangler (normally http://localhost:8788). The tracked UUID binds the live Cloudflare database. Local Wrangler commands still use a separate local database unless you explicitly pass `--remote`.
 
 At `/admin/`, sign in using `ADMIN_TOKEN`, choose the existing `questions.json`, and save a draft. Review it and publish for local testing. Files up to 256 KB and up to 60 questions are supported. The upload can be a questions array or a full object:
 
@@ -45,7 +45,7 @@ The importer only creates a draft. Review and publish through the workspace.
 
 ## Production setup and domain migration
 
-See [docs/cloudflare-migration.md](docs/cloudflare-migration.md). The old GitHub Pages deployment stays online until DNS is moved. Its workflow is now manual for rollback. The Cloudflare workflow is disabled until the account secrets and enable variable have been configured.
+See [docs/cloudflare-migration.md](docs/cloudflare-migration.md). The Cloudflare site is deployed at https://jeepinnacle.pages.dev. The original 30-question bank is an unpublished draft in live D1. The old GitHub Pages deployment stays online until DNS is moved. Its workflow is now manual for rollback. The Cloudflare workflow is disabled until the account secrets and enable variable have been configured.
 
 `npm run build` copies an explicit allowlist to `dist/`; never deploy the repository root. Functions are compiled by Wrangler separately. Private banks, secrets, migrations, scripts and unrelated files are excluded from public assets.
 
@@ -57,6 +57,8 @@ See [docs/cloudflare-migration.md](docs/cloudflare-migration.md). The old GitHub
 - The server sets the deadline. Late submission grades only answers already saved before the deadline. There is no background auto-submit: an abandoned attempt remains visible as in progress, with its saved responses, until the browser submits it.
 - An attempt key is stored in the visitor's browser and authorises only that attempt. Parent contact data is returned only to the teacher workspace. Shared devices should be avoided.
 - Autosaves use revision checks to prevent silent concurrent overwrites. On a conflict, reload before continuing. Offline choices stay in browser storage; reconnect and save **before** the deadline.
+
+The production administrator key is saved in macOS Keychain under service **JEE Pinnacle Teacher Admin**, account **jeepinnacle**. Open Keychain Access and search that service name to retrieve it. No production secret is committed.
 
 ## Data access and operations
 
