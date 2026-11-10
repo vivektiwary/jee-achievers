@@ -291,8 +291,6 @@ const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.getElementById("site-nav");
 const floatingBtn = document.querySelector(".floating-btn");
 const floatingPanel = document.getElementById("floating-panel");
-const WHATSAPP_BUSINESS_NUMBER = "918310906345";
-const INQUIRY_EMAIL = "gunjankumar306@gmail.com";
 
 function renderTestimonials(items) {
   if (!sliderContainer) return;
@@ -313,65 +311,19 @@ function renderTestimonials(items) {
   });
 }
 
-function formatContactInquiry(form) {
-  const formData = new FormData(form);
-  const batches = formData.getAll("batch");
-  const lines = [
-    "New JEEPinnacle inquiry",
-    "",
-    `Student: ${formData.get("student") || "Not provided"}`,
-    `Parent contact: ${formData.get("phone") || "Not provided"}`,
-    `Email: ${formData.get("email") || "Not provided"}`,
-    `Current class: ${formData.get("class") || "Not provided"}`,
-    `Preferred batch: ${batches.length ? batches.join(", ") : "Not provided"}`,
-    `Message: ${formData.get("message") || "Not provided"}`
-  ];
-
-  return lines.join("\n");
-}
-
-function encodeFormData(form) {
-  const formData = new FormData(form);
-  const params = new URLSearchParams();
-  formData.forEach((value, key) => {
-    params.append(key, value);
+async function storeInquiry(form) {
+  const values = new FormData(form);
+  if (values.get("bot-field") || values.get("newsletter-bot-field")) throw new Error("Unable to submit this form.");
+  const payload = Object.fromEntries(values);
+  payload.batch = values.getAll("batch");
+  const response = await fetch("/api/inquiries", {
+    method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ kind: form === contactForm ? "contact" : "newsletter", payload,
+      consent: values.get("consent") === "on",
+      source: new URLSearchParams(location.search).get("utm_source") || "direct" })
   });
-  return params;
-}
-
-function storeNetlifySubmission(form) {
-  if (!form.matches("[data-netlify='true']")) return;
-
-  const body = encodeFormData(form).toString();
-  if (navigator.sendBeacon) {
-    const payload = new Blob([body], { type: "application/x-www-form-urlencoded" });
-    if (navigator.sendBeacon("/", payload)) return;
-  }
-
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body,
-    keepalive: true
-  }).catch(error => {
-    console.warn("Unable to store form submission", error);
-  });
-}
-
-function isMobileViewport() {
-  return window.matchMedia("(max-width: 760px)").matches || /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
-}
-
-function openWhatsAppInquiry(form) {
-  const message = encodeURIComponent(formatContactInquiry(form));
-  const whatsappUrl = `https://wa.me/${WHATSAPP_BUSINESS_NUMBER}?text=${message}`;
-  window.open(whatsappUrl, "_blank", "noopener");
-}
-
-function openEmailInquiry(form) {
-  const subject = encodeURIComponent("New JEEPinnacle inquiry");
-  const body = encodeURIComponent(formatContactInquiry(form));
-  window.location.href = `mailto:${INQUIRY_EMAIL}?subject=${subject}&body=${body}`;
+  const result = await response.json();
+  if (!response.ok) throw new Error(result.error || "Unable to save. Please try again.");
 }
 
 function handleTestimonialForm(event) {
@@ -413,26 +365,18 @@ if (testimonialForm) {
   testimonialForm.addEventListener("submit", handleTestimonialForm);
 }
 
-function handleFormSubmit(event) {
+async function handleFormSubmit(event) {
   event.preventDefault();
   const form = event.currentTarget;
-
-  if (form === contactForm) {
-    storeNetlifySubmission(form);
-    if (isMobileViewport()) {
-      openWhatsAppInquiry(form);
-      alert("Your demo request is ready in WhatsApp Business. Please tap send to share it.");
-    } else {
-      openEmailInquiry(form);
-      alert("Your demo request has been saved through the site form, and an email draft has been prepared. Please send it from your email app.");
-    }
+  const button = form.querySelector("button[type=submit], button:not([type])");
+  if (button) button.disabled = true;
+  try {
+    await storeInquiry(form);
+    alert(form === contactForm ? "Your demo request has been saved. Gunjan can follow up using the parent contact details." : "Your subscription has been saved. Thank you!");
     form.reset();
-    return;
-  }
-
-  storeNetlifySubmission(form);
-  form.reset();
-  alert("Thank you! You will receive JEE strategies at this email.");
+  } catch (error) {
+    alert(error.message || "Unable to save. Please retry or contact Gunjan directly.");
+  } finally { if (button) button.disabled = false; }
 }
 
 if (contactForm) {

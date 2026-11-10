@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "jeepinnacle",
+  "pages_build_output_dir": "dist",
+  "compatibility_date": "2026-11-10",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "jeepinnacle",
+      "database_id": "235fa02c-1b20-4698-8d46-638affd8e4cf",
+      "migrations_dir": "migrations",
+    },
+  ],
+}
