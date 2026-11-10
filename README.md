@@ -45,7 +45,7 @@ The importer only creates a draft. Review and publish through the workspace.
 
 ## Production setup and domain migration
 
-See [docs/cloudflare-migration.md](docs/cloudflare-migration.md). The Cloudflare site is deployed at https://jeepinnacle.pages.dev. The original 30-question bank is an unpublished draft in live D1. The old GitHub Pages deployment stays online until DNS is moved. Its workflow is now manual for rollback. The Cloudflare workflow is disabled until the account secrets and enable variable have been configured.
+See [docs/cloudflare-migration.md](docs/cloudflare-migration.md). The Cloudflare site is deployed at https://jeepinnacle.pages.dev. The original 30-question bank is an unpublished draft in live D1. The custom domain https://www.jeepinnacle.com now serves Cloudflare Pages; the bare `.com` domain redirects at Cloudflare. The alternate `.in` domain has an existing nameserver/registration issue and does not resolve. Its workflow is now manual for rollback. The Cloudflare workflow is disabled until the account secrets and enable variable have been configured.
 
 `npm run build` copies an explicit allowlist to `dist/`; never deploy the repository root. Functions are compiled by Wrangler separately. Private banks, secrets, migrations, scripts and unrelated files are excluded from public assets.
 

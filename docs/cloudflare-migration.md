@@ -10,7 +10,11 @@
 - Live smoke check passed: creation, autosave, submission, marking and authenticated response retrieval. Its synthetic records were removed.
 - Production admin secret: macOS Keychain, service `JEE Pinnacle Teacher Admin`, account `jeepinnacle`.
 - `.com` already uses Cloudflare nameservers. `www` originally pointed to `vivektiwary.github.io`; `.in` shows invalid nameservers.
-- `www.jeepinnacle.com` is attached to the Pages project; DNS cutover is pending.
+- `www.jeepinnacle.com` is active on Pages, with its CNAME set to `jeepinnacle.pages.dev`. Home, test, teacher and all existing coaching pages returned HTTP 200 on the custom domain.
+- Apex redirect rule `JEE Pinnacle apex to www` is enabled: hostname equals `jeepinnacle.com`, dynamic target `concat("https://www.jeepinnacle.com", http.request.uri.path)`, 308 status, query strings preserved. The four existing apex A records are proxied; the redirect runs at Cloudflare before any origin request. Their original GitHub IP values remain available for rollback.
+- Authoritative DNS and direct Cloudflare checks confirmed the HTTP/HTTPS apex redirects. Recursive DNS caches may briefly retain the old apex records.
+- `_domainconnect` and `_dmarc` were preserved. No MX records were present.
+- `jeepinnacle.in` still returns NXDOMAIN / Cloudflare invalid nameservers. No registrar or registration change was made for that alternate domain.
 
 Reuse these resources. The provisioning commands below describe initial setup for a new environment; do not recreate the live database/project.
 
